@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalVars } from '../../providers/globalVars';
 import { CommonService } from '../../providers/commonService';
 import { regexPatterns } from '../../validators/regexPatterns';
-import { CouncilPage } from '../council/council';
+//import { CouncilPage } from '../council/council';
 /**
  * Generated class for the ChapterPage page.
  *
@@ -214,7 +214,7 @@ _submitChapter(){
               text:'Ok',
               handler:()=>{
                 //this.navCtrl.push(CouncilPage);
-                this.navCtrl.setRoot(CouncilPage);
+                this.navCtrl.setRoot(ChapterPage);
                 
               }
             }],

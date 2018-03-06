@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../providers/commonService';
 import { regexPatterns } from '../../validators/regexPatterns';
 import { GlobalVars } from '../../providers/globalVars';
-import { CommanderyPage } from '../commandery/commandery';
+//import { CommanderyPage } from '../commandery/commandery';
 /**
  * Generated class for the CouncilPage page.
  *
@@ -209,7 +209,7 @@ onFormLoad(form)
               text:'Ok',
               handler:()=>{
                 //this.navCtrl.push(CommanderyPage);
-                this.navCtrl.setRoot(CommanderyPage);
+                this.navCtrl.setRoot(CouncilPage);
               }
             }],
           });

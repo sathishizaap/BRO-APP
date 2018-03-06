@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoadingController } from 'ionic-angular';
 import { GlobalVars } from '../../providers/globalVars';
 import { regexPatterns } from '../../validators/regexPatterns';
-import { ChapterPage } from '../chapter/chapter';
+//import { ChapterPage } from '../chapter/chapter';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -350,7 +350,7 @@ if (this._passwordInputType === "password") {
               text:'Ok',
               handler:()=>{
                 //this.navCtrl.push(ChapterPage);
-                this.navCtrl.setRoot(ChapterPage);
+                this.navCtrl.setRoot(ProfilePage);
               }
             }],
           });

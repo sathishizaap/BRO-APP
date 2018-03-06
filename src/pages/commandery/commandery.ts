@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../providers/commonService';
 import { regexPatterns } from '../../validators/regexPatterns';
 import { GlobalVars } from '../../providers/globalVars';
-import { ProfilePage } from '../profile/profile';
+//import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the CommanderyPage page.
  *
@@ -210,7 +210,7 @@ export class CommanderyPage {
               text:'Ok',
               handler:()=>{
                 //this.navCtrl.push(ProfilePage);
-                this.navCtrl.setRoot(ProfilePage);
+                this.navCtrl.setRoot(CommanderyPage);
               }
             }],
           });
