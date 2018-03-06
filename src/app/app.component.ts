@@ -7,6 +7,7 @@ import { ProfilePage } from '../pages/profile/profile';
 //import { HomePage } from '../pages/home/home';
 import { ChapterPage } from '../pages/chapter/chapter';
 import { CouncilPage } from '../pages/council/council';
+import { PaypalPage } from '../pages/paypal/paypal';
 import { CommanderyPage } from '../pages/commandery/commandery';
 import { GlobalVars } from '../providers/globalVars';
 
@@ -49,6 +50,7 @@ export class MyApp {
             { title: 'Commandery', component: CommanderyPage,icon:''}
           ]
         },
+         { title: 'Paypal', component: PaypalPage,icon:'ios-basket',visible:false,dropdown:false, multilevel:[]},
         { title: 'Logout', component: LoginPage,icon:'ios-power',visible:false,dropdown:false, multilevel:[]}
       ];
 
