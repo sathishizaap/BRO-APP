@@ -3,7 +3,8 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 //import {SERVER_URL} from './config';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-let apiUrl = 'http://localhost/bro/Webservice/';
+//let apiUrl = 'http://localhost/bro/Webservice/';
+let apiUrl = 'http://162.144.41.156/~izaapinn/ram/bro/index.php/Webservice/';
 
 @Injectable()
 export class CommonService {
