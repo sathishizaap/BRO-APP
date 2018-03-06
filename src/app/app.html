@@ -1,0 +1,53 @@
+<!-- <ion-menu id="myMenu" [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+       Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <div *ngFor="let p of pages" >
+        <button menuClose ion-item *ngIf="p.visible" (click)="openPage(p)">
+          <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
+        </button>
+      </div>
+      <div *ngFor="let p of pages" >
+        <button menuClose ion-item *ngIf="!p.visible && user" (click)="_logout()">
+          <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<!-- <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav> - -->
+
+
+<ion-menu id="myMenu" [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div *ngFor="let p of pages;let i = index;" (click)="toggleLevel1('idx'+i,p.dropdown,p)" class="mainmenu">
+      <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
+      <ion-icon float-right [name]="isLevel1Shown('idx'+i) ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
+      <div *ngIf="isLevel1Shown('idx'+i)" class="submenu">
+        <p *ngFor="let s of p.multilevel" (click)="shs(s)">
+            {{s.title}}
+        </p>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

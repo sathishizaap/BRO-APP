@@ -1,0 +1,450 @@
+<ion-header>
+
+  <ion-navbar>
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+		<form [formGroup]="_profileForm" (submit)="_submitProfile()" method="post" novalidate [hidden]="formOne">
+	<ion-input  type="hidden" formControlName="id"></ion-input>
+	<ion-title>Personal Data</ion-title>
+    <ion-item>
+    <ion-label stacked color="transparent">Mason?</ion-label>
+    <ion-select formControlName="mason">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.mason.hasError('required') && _profileForm.controls.mason.touched">
+				<p ion-text text-wrap>Mason is Required</p>
+	</ion-item>
+    
+    <ion-item>
+    <ion-label stacked color="transparent">Status</ion-label>
+    <ion-select formControlName="status">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Active">Active</ion-option>
+      <ion-option value="Inactive">Inactive</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.status.hasError('required') && _profileForm.controls.status.touched">
+				<p ion-text text-wrap>Status is Required</p>
+ </ion-item>
+
+    <ion-item>
+    <ion-label stacked color="transparent">Is Admin?</ion-label>
+    <ion-select formControlName="is_admin">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.is_admin.hasError('required') && _profileForm.controls.is_admin.touched">
+				<p ion-text text-wrap>User is Required</p>
+	</ion-item>
+  
+   <ion-item>
+      <ion-label stacked color="transparent">Password</ion-label>
+       <ion-input formControlName="password" [type]="_passwordInputType"></ion-input>
+ </ion-item>
+
+ <ion-icon float-right name="{{_passwordIcon}}" (click)="_toggleViewPassword($event)" class="password-icon"></ion-icon>
+ 
+   <ion-item>
+	      <ion-label stacked color="transparent">Firstname</ion-label>
+	      <ion-input  type="text" formControlName="first_name"></ion-input>
+	    </ion-item>
+
+	     <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.first_name.hasError('required') && _profileForm.controls.first_name.touched">
+				<p ion-text text-wrap>Please Enter Firstname</p>
+			</ion-item>
+    
+    <ion-item>
+	      <ion-label stacked color="transparent">Middle Name</ion-label>
+	      <ion-input  type="text" formControlName="middle_name"></ion-input>
+	    </ion-item>
+ 
+   <ion-item>
+	      <ion-label stacked color="transparent">Lastname</ion-label>
+	      <ion-input  type="text" formControlName="last_name"></ion-input>
+	    </ion-item>
+
+    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.last_name.hasError('required') && _profileForm.controls.last_name.touched">
+				<p ion-text text-wrap>Please Enter Lastname</p>
+	</ion-item>
+   
+    	
+
+    <ion-item>
+
+	      <ion-label stacked color="transparent">Phone</ion-label>
+	      <ion-input  type="text" formControlName="mobile"></ion-input>
+	    </ion-item>
+    
+    <ion-item>
+	      <ion-label stacked color="transparent">Home phone</ion-label>
+	      <ion-input  type="text" formControlName="phone"></ion-input>
+	    </ion-item>
+
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.phone.hasError('required') && _profileForm.controls.phone.touched">
+				<p ion-text text-wrap>Please Enter Phone Number</p>
+	 </ion-item>
+   
+	<ion-title>Home Address</ion-title>
+    
+   <ion-item>
+	      <ion-label stacked color="transparent">Address1</ion-label>
+	      <ion-input  type="text" formControlName="address1"></ion-input>
+	    </ion-item>
+
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.address1.hasError('required') && _profileForm.controls.address1.touched">
+				<p ion-text text-wrap>Please Enter Address1</p>
+	  </ion-item>
+    
+    <ion-item>
+	      <ion-label stacked color="transparent">Address2</ion-label>
+	      <ion-input  type="text" formControlName="address2"></ion-input>
+	    </ion-item>
+    
+   <ion-item>
+	      <ion-label stacked color="transparent">City</ion-label>
+	      <ion-input  type="text" formControlName="city"></ion-input>
+	    </ion-item>
+
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.city.hasError('required') && _profileForm.controls.city.touched">
+				<p ion-text text-wrap>Please Enter City</p>
+	  </ion-item>
+   
+    <ion-item>
+    <ion-label stacked color="transparent">State</ion-label>
+		 <ion-select formControlName="state">
+		 <ion-option value="" selected="selected">-None-</ion-option>
+		 <ion-option value="AL">Alabama</ion-option>
+		 <ion-option value="AK">Alaska</ion-option>
+		 <ion-option value="AZ">Arizona</ion-option>
+		 <ion-option value="AR">Arkansas</ion-option>
+		 <ion-option value="CA">California</ion-option>
+		 <ion-option value="CO">Colorado</ion-option>
+		 <ion-option value="CT">Connecticut</ion-option>
+		 <ion-option value="DE">Delaware</ion-option>
+		 <ion-option value="FL">Florida</ion-option>
+		 <ion-option value="GA">Georgia</ion-option>
+		 <ion-option value="HI">Hawaii</ion-option>
+		 <ion-option value="ID">Idaho</ion-option>
+		 <ion-option value="IL">Illinois</ion-option>
+		 <ion-option value="IN">Indiana</ion-option>
+		 <ion-option value="IA">Iowa</ion-option>
+		 <ion-option value="KS">Kansas</ion-option>
+		 <ion-option value="KY">Kentucky</ion-option>
+		 <ion-option value="LA">Louisiana</ion-option>
+		 <ion-option value="ME">Maine</ion-option>
+		<ion-option value="MD">Maryland</ion-option>
+		<ion-option value="MA">Massachusetts</ion-option>
+		<ion-option value="MI">Michigan</ion-option>
+		<ion-option value="MN">Minnesota</ion-option>
+		<ion-option value="MS">Mississippi</ion-option>
+		<ion-option value="MO">Missouri</ion-option>
+		<ion-option value="MT">Montana</ion-option>
+		<ion-option value="NE">Nebraska</ion-option>
+		<ion-option value="NV">Nevada</ion-option>
+		<ion-option value="NH">New Hampshire</ion-option>
+		<ion-option value="NJ">New Jersey</ion-option>
+		<ion-option value="NM">New Mexico</ion-option>
+		<ion-option value="NY">New York</ion-option>
+		<ion-option value="NC">North Carolina</ion-option>
+		<ion-option value="ND">North Dakota</ion-option>
+		<ion-option value="OH">Ohio</ion-option>
+		<ion-option value="OK">Oklahoma</ion-option>
+		<ion-option value="OR">Oregon</ion-option>
+		<ion-option value="PA">Pennsylvania</ion-option>
+		<ion-option value="RI">Rhode Island</ion-option>
+		<ion-option value="SC">South Carolina</ion-option>
+		<ion-option value="SD">South Dakota</ion-option>
+		<ion-option value="TN">Tennessee</ion-option>
+		<ion-option value="TX">Texas</ion-option>
+		<ion-option value="UT">Utah</ion-option>
+		<ion-option value="VT">Vermont</ion-option>
+		<ion-option value="VA">Virginia</ion-option>
+		<ion-option value="WA">Washington</ion-option>
+		<ion-option value="WV">West Virginia</ion-option>
+		<ion-option value="WI">Wisconsin</ion-option>
+		<ion-option value="WY">Wyoming</ion-option>
+</ion-select>
+  </ion-item>
+  <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.state.hasError('required') && _profileForm.controls.state.touched">
+				<p ion-text text-wrap>State is Required</p>
+	  </ion-item>
+ 
+    <ion-item>
+	      <ion-label stacked color="transparent">Zip</ion-label>
+	      <ion-input  type="text" formControlName="zip"></ion-input>
+	    </ion-item>
+
+	     <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.zip.hasError('required') && _profileForm.controls.zip.touched">
+				<p ion-text text-wrap>Please Enter Zip</p>
+	  </ion-item>
+    	
+   <ion-title>Affiliations</ion-title>
+
+    <ion-item>
+    <ion-label stacked color="transparent">York Rite?</ion-label>
+    <ion-select formControlName="york_rite">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+    
+    <ion-item>
+    <ion-label stacked color="transparent">Scottish Rite?</ion-label>
+    <ion-select formControlName="scottish_rite">
+     <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+    
+    <ion-item>
+    <ion-label stacked color="transparent">Shriners?</ion-label>
+    <ion-select formControlName="shriner">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+    
+    <ion-item>
+    <ion-label stacked color="transparent">Grotto?</ion-label>
+    <ion-select formControlName="grotto">
+     <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+   
+<ion-title>Family</ion-title>
+
+    <ion-item>
+	      <ion-label stacked color="transparent">Spouse</ion-label>
+	      <ion-input  type="text" formControlName="spouse"></ion-input>
+	    </ion-item>
+    
+   <ion-item>
+	      <ion-label stacked color="transparent">Kids</ion-label>
+	       <ion-input  type="text" formControlName="kids1"></ion-input>
+	    </ion-item>
+   
+    <ion-item>
+	       <ion-input  type="text" formControlName="kids2"></ion-input>
+	    </ion-item>
+  
+   <ion-item>
+	     
+	       <ion-input  type="text" formControlName="kids3"></ion-input>
+	    </ion-item>
+
+   <ion-item>
+	     
+	        <ion-input  type="text" formControlName="kids4"></ion-input>
+	    </ion-item>
+
+<ion-title>Work Address</ion-title>
+
+    <ion-item>
+	      <ion-label stacked color="transparent">Work</ion-label>
+	      <ion-input  type="text" formControlName="work"></ion-input>
+	    </ion-item>
+ 
+   <ion-item>
+	      <ion-label stacked color="transparent">Office Email</ion-label>
+	      <ion-input  type="text" formControlName="off_email"></ion-input>
+	    </ion-item>
+   
+ 
+	     <ion-item>
+	       <ion-label stacked color="transparent">Personal Email</ion-label>
+	      <ion-input  type="text" formControlName="email"></ion-input>
+	    </ion-item>
+
+    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.email.hasError('required') && _profileForm.controls.email.touched">
+				<p ion-text text-wrap>Please Enter Email</p>
+	</ion-item>
+
+   
+   <ion-item>
+	      <ion-label stacked color="transparent">Address1</ion-label>
+	      <ion-input  type="text" formControlName="w_address1"></ion-input>
+	    </ion-item>
+
+   <ion-item>
+	      <ion-label stacked color="transparent">Address2</ion-label>
+	      <ion-input  type="text" formControlName="w_address2"></ion-input>
+	    </ion-item>
+    
+   <ion-item>
+	      <ion-label stacked color="transparent">Date of Birth</ion-label>
+	      <ion-input  type="text" formControlName="dob"></ion-input>
+	    </ion-item>
+
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.dob.hasError('required') && _profileForm.controls.dob.touched">
+				<p ion-text text-wrap>Please Enter DOB</p>
+	</ion-item>
+    
+   <ion-item>
+	      <ion-label stacked color="transparent">Birth (City)</ion-label>
+	      <ion-input  type="text" formControlName="b_city"></ion-input>
+	    </ion-item>
+
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.b_city.hasError('required') && _profileForm.controls.b_city.touched">
+				<p ion-text text-wrap>Please Enter Birth (City)</p>
+	</ion-item>
+   
+   <ion-item>
+	      <ion-label stacked color="transparent">Birth (State)</ion-label>
+		 <ion-select formControlName="b_state">
+		 <ion-option value="" selected="selected">-None-</ion-option>
+		 <ion-option value="AL">Alabama</ion-option>
+		 <ion-option value="AK">Alaska</ion-option>
+		 <ion-option value="AZ">Arizona</ion-option>
+		 <ion-option value="AR">Arkansas</ion-option>
+		 <ion-option value="CA">California</ion-option>
+		 <ion-option value="CO">Colorado</ion-option>
+		 <ion-option value="CT">Connecticut</ion-option>
+		 <ion-option value="DE">Delaware</ion-option>
+		 <ion-option value="FL">Florida</ion-option>
+		 <ion-option value="GA">Georgia</ion-option>
+		 <ion-option value="HI">Hawaii</ion-option>
+		 <ion-option value="ID">Idaho</ion-option>
+		 <ion-option value="IL">Illinois</ion-option>
+		 <ion-option value="IN">Indiana</ion-option>
+		 <ion-option value="IA">Iowa</ion-option>
+		 <ion-option value="KS">Kansas</ion-option>
+		 <ion-option value="KY">Kentucky</ion-option>
+		 <ion-option value="LA">Louisiana</ion-option>
+		 <ion-option value="ME">Maine</ion-option>
+		<ion-option value="MD">Maryland</ion-option>
+		<ion-option value="MA">Massachusetts</ion-option>
+		<ion-option value="MI">Michigan</ion-option>
+		<ion-option value="MN">Minnesota</ion-option>
+		<ion-option value="MS">Mississippi</ion-option>
+		<ion-option value="MO">Missouri</ion-option>
+		<ion-option value="MT">Montana</ion-option>
+		<ion-option value="NE">Nebraska</ion-option>
+		<ion-option value="NV">Nevada</ion-option>
+		<ion-option value="NH">New Hampshire</ion-option>
+		<ion-option value="NJ">New Jersey</ion-option>
+		<ion-option value="NM">New Mexico</ion-option>
+		<ion-option value="NY">New York</ion-option>
+		<ion-option value="NC">North Carolina</ion-option>
+		<ion-option value="ND">North Dakota</ion-option>
+		<ion-option value="OH">Ohio</ion-option>
+		<ion-option value="OK">Oklahoma</ion-option>
+		<ion-option value="OR">Oregon</ion-option>
+		<ion-option value="PA">Pennsylvania</ion-option>
+		<ion-option value="RI">Rhode Island</ion-option>
+		<ion-option value="SC">South Carolina</ion-option>
+		<ion-option value="SD">South Dakota</ion-option>
+		<ion-option value="TN">Tennessee</ion-option>
+		<ion-option value="TX">Texas</ion-option>
+		<ion-option value="UT">Utah</ion-option>
+		<ion-option value="VT">Vermont</ion-option>
+		<ion-option value="VA">Virginia</ion-option>
+		<ion-option value="WA">Washington</ion-option>
+		<ion-option value="WV">West Virginia</ion-option>
+		<ion-option value="WI">Wisconsin</ion-option>
+		<ion-option value="WY">Wyoming</ion-option>
+</ion-select>
+	    </ion-item>
+    
+	    <ion-item class="login-error" no-lines no-padding *ngIf="_profileForm.controls.b_state.hasError('required') && _profileForm.controls.b_state.touched">
+				<p ion-text text-wrap>Birth (State) is Required</p>
+	</ion-item>
+   
+   <ion-item>
+	      <ion-label stacked color="transparent">City</ion-label>
+	      <ion-input  type="text" formControlName="w_city"></ion-input>
+	    </ion-item>
+  
+   <ion-item>
+	     <ion-label stacked color="transparent">State</ion-label>
+		 <ion-select formControlName="w_state" >
+		 <ion-option value="" selected="selected">-None-</ion-option>
+		 <ion-option value="AL">Alabama</ion-option>
+		 <ion-option value="AK">Alaska</ion-option>
+		 <ion-option value="AZ">Arizona</ion-option>
+		 <ion-option value="AR">Arkansas</ion-option>
+		 <ion-option value="CA">California</ion-option>
+		 <ion-option value="CO">Colorado</ion-option>
+		 <ion-option value="CT">Connecticut</ion-option>
+		 <ion-option value="DE">Delaware</ion-option>
+		 <ion-option value="FL">Florida</ion-option>
+		 <ion-option value="GA">Georgia</ion-option>
+		 <ion-option value="HI">Hawaii</ion-option>
+		 <ion-option value="ID">Idaho</ion-option>
+		 <ion-option value="IL">Illinois</ion-option>
+		 <ion-option value="IN">Indiana</ion-option>
+		 <ion-option value="IA">Iowa</ion-option>
+		 <ion-option value="KS">Kansas</ion-option>
+		 <ion-option value="KY">Kentucky</ion-option>
+		 <ion-option value="LA">Louisiana</ion-option>
+		 <ion-option value="ME">Maine</ion-option>
+		<ion-option value="MD">Maryland</ion-option>
+		<ion-option value="MA">Massachusetts</ion-option>
+		<ion-option value="MI">Michigan</ion-option>
+		<ion-option value="MN">Minnesota</ion-option>
+		<ion-option value="MS">Mississippi</ion-option>
+		<ion-option value="MO">Missouri</ion-option>
+		<ion-option value="MT">Montana</ion-option>
+		<ion-option value="NE">Nebraska</ion-option>
+		<ion-option value="NV">Nevada</ion-option>
+		<ion-option value="NH">New Hampshire</ion-option>
+		<ion-option value="NJ">New Jersey</ion-option>
+		<ion-option value="NM">New Mexico</ion-option>
+		<ion-option value="NY">New York</ion-option>
+		<ion-option value="NC">North Carolina</ion-option>
+		<ion-option value="ND">North Dakota</ion-option>
+		<ion-option value="OH">Ohio</ion-option>
+		<ion-option value="OK">Oklahoma</ion-option>
+		<ion-option value="OR">Oregon</ion-option>
+		<ion-option value="PA">Pennsylvania</ion-option>
+		<ion-option value="RI">Rhode Island</ion-option>
+		<ion-option value="SC">South Carolina</ion-option>
+		<ion-option value="SD">South Dakota</ion-option>
+		<ion-option value="TN">Tennessee</ion-option>
+		<ion-option value="TX">Texas</ion-option>
+		<ion-option value="UT">Utah</ion-option>
+		<ion-option value="VT">Vermont</ion-option>
+		<ion-option value="VA">Virginia</ion-option>
+		<ion-option value="WA">Washington</ion-option>
+		<ion-option value="WV">West Virginia</ion-option>
+		<ion-option value="WI">Wisconsin</ion-option>
+		<ion-option value="WY">Wyoming</ion-option>
+</ion-select>
+	    </ion-item>
+    
+
+   <ion-item>
+	      <ion-label stacked color="transparent">Zip</ion-label>
+	      <ion-input  type="text" formControlName="w_zip"></ion-input>
+	    </ion-item> 
+		
+		<ion-item>
+	      <ion-label stacked color="transparent">Notes</ion-label>
+	      <ion-input  type="text" formControlName="notes"></ion-input>
+	    </ion-item>
+	
+	    <button ion-button full  [disabled]="!_profileForm.valid" type="submit">Save</button> 
+	   
+</form>
+<!-- <ion-input type="text" placeholder="Enter Your First Name" value="{{profile.first_name}}">
+	
+</ion-input> -->
+</ion-content>

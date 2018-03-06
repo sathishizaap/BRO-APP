@@ -1,0 +1,230 @@
+<!--
+  Generated template for the ChapterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>chapter</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<form [formGroup]="_chapterForm" (submit)="_submitChapter()" method="post" novalidate [hidden]="formOne">
+    
+    <ion-input  type="hidden" formControlName="user_id"></ion-input>
+		<ion-item>
+	      <ion-label stacked color="transparent">Chapter Name</ion-label>
+	      <ion-input  type="text" formControlName="chapter_name"></ion-input>
+	    </ion-item>
+
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.chapter_name.hasError('required') && _chapterForm.controls.chapter_name.touched">
+        <p ion-text text-wrap>Please Enter Chapter Name</p>
+      </ion-item>
+
+	    <ion-item>
+	      <ion-label stacked color="transparent">Chapter No</ion-label>
+	      <ion-input  type="text" formControlName="chapter_no"></ion-input>
+	    </ion-item>
+
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.chapter_no.hasError('required') && _chapterForm.controls.chapter_no.touched">
+        <p ion-text text-wrap>Please Enter Chapter No</p>
+      </ion-item>
+
+	    <ion-item>
+	      <ion-label stacked color="transparent">District No</ion-label>
+	      <ion-input  type="text" formControlName="district_no"></ion-input>
+	    </ion-item>
+	    
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.district_no.hasError('required') && _chapterForm.controls.district_no.touched">
+        <p ion-text text-wrap>Please Enter District No</p>
+      </ion-item>
+
+       <ion-item>
+	      <ion-label stacked color="transparent">Chapter Top Line Singer</ion-label>
+	      <ion-input  type="text" formControlName="top_line_signer"></ion-input>
+	    </ion-item>
+
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.top_line_signer.hasError('required') && _chapterForm.controls.top_line_signer.touched">
+        <p ion-text text-wrap>Please Enter Chapter Top Line Singer</p>
+      </ion-item>
+
+	    <ion-item>
+	      <ion-label stacked color="transparent">Second Line Singer</ion-label>
+	      <ion-input  type="text" formControlName="second_line_signer"></ion-input>
+	    </ion-item>
+
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.second_line_signer.hasError('required') && _chapterForm.controls.second_line_signer.touched">
+        <p ion-text text-wrap>Please Enter Second Line Singer</p>
+      </ion-item>
+	    
+	    <ion-item>
+	      <ion-label stacked color="transparent">Date Joined</ion-label>
+	      <ion-input  type="date" formControlName="date_joined"></ion-input>
+	    </ion-item>
+
+       <ion-item class="login-error" no-lines no-padding *ngIf="_chapterForm.controls.date_joined.hasError('required') && _chapterForm.controls.date_joined.touched">
+        <p ion-text text-wrap>Please Enter Date Joined</p>
+      </ion-item>
+
+	 <ion-item>
+	<ion-label stacked color="transparent">Most High Priest?</ion-label>
+    <ion-select formControlName="most_high_priest">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item>
+	<ion-label stacked color="transparent">King?</ion-label>
+    <ion-select formControlName="king">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item>
+	<ion-label stacked color="transparent">R.A Captain?</ion-label>
+    <ion-select formControlName="ra_captain">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+ <ion-item>
+      <ion-label stacked color="transparent">Year</ion-label>
+      <ion-input  type="text" formControlName="year1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+	<ion-label stacked color="transparent">Scribe?</ion-label>
+    <ion-select formControlName="scribe">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+    <ion-item>
+	<ion-label stacked color="transparent">Master 3rd Vef?</ion-label>
+    <ion-select formControlName="master_vef_3">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">District High Priest?</ion-label>
+    <ion-select formControlName="district_high_priest">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">Secretary?</ion-label>
+    <ion-select formControlName="secretary">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">Master 2nd Vef?</ion-label>
+    <ion-select formControlName="master_vef_2">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked color="transparent">Year</ion-label>
+      <ion-input  type="text" formControlName="year2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+	<ion-label stacked color="transparent">Treasurer</ion-label>
+    <ion-select formControlName="treasurer">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item>
+	<ion-label stacked color="transparent">Master 1st Vef?</ion-label>
+    <ion-select formControlName="master_vef_1">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">High Priest?</ion-label>
+    <ion-select formControlName="hight_priest">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+   <ion-item>
+	<ion-label stacked color="transparent">Capt.Host</ion-label>
+    <ion-select formControlName="capt_host">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">Chaptain?</ion-label>
+    <ion-select formControlName="chaptain">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked color="transparent">Year</ion-label>
+      <ion-input  type="text" formControlName="year3"></ion-input>
+    </ion-item>
+
+   <ion-item>
+	<ion-label stacked color="transparent">Principal Sojourner?</ion-label>
+    <ion-select formControlName="principal_sojourner">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+	<ion-label stacked color="transparent">Sentinel?</ion-label>
+    <ion-select formControlName="sentinel">
+      <ion-option value="">-None-</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="No">No</ion-option>
+    </ion-select>
+  </ion-item>
+ <button ion-button full  type="submit">Save</button>
+
+	</form>
+
+</ion-content>
